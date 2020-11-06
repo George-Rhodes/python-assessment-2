@@ -1,3 +1,6 @@
+from random import randint
+
+
 	# INSTRUCTIONS
 
 	# In case it is not clear, the Question appears first, then examples, then any hints and finally the function that you need to complete appears underneath:
@@ -30,10 +33,10 @@
 	# How does a for loop iterate through a string?
 
 def one(input):
-	new_input=''
+	NInput=''
 	for i in range(len(input)):
-		new_input += input[i] + input[i] + input[i]
-	return new_input
+		NInput += input[i] + input[i] + input[i]
+	return NInput
 
 	# <QUESTION 2>
 
@@ -134,8 +137,17 @@ def four(input1, input2):
 	# There is a module which can be used to generate random numbers, this module is called random.
 	# The random module contains a function called randint.
 
+
+
 def five():
-    return []
+	output = list()
+	count = 0
+	while count < 5:
+		random = randint(100,200)
+		if random % 2 == 0:
+			output.append(random)
+			count += 1
+	return output
 
 	# <QUESTION 6>
 
@@ -154,7 +166,10 @@ def five():
 	# There are no hints for this question.
     
 def six(input):
-	return False
+	if input[-2:].lower() =='py':
+		return True
+	else:
+		return False
 
 	# <QUESTION 7>
 
@@ -178,8 +193,12 @@ def six(input):
 	# Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
-	return False
-
+	output = [a, b, c]
+	output.sort()
+	if (output[2] - output[1]) == (output[1] - output[0]):
+		return True
+	else:
+		return False
 	# <QUESTION 8>
 
     # Given a string and an integer, n, return a string that removes n letters from the 'middle' of the string.
@@ -196,7 +215,11 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(input,  a):
-	return ""
+	mid = int(len(input)/2)
+	dif = int((a - 1) / 2)
+	done = input[:mid-dif] + input[mid+dif+1:]
+	
+	return done
 
 	# <QUESTION 9>
 
