@@ -218,7 +218,6 @@ def eight(input,  a):
 	mid = int(len(input)/2)
 	dif = int((a - 1) / 2)
 	done = input[:mid-dif] + input[mid+dif+1:]
-	
 	return done
 
 	# <QUESTION 9>
@@ -236,7 +235,17 @@ def eight(input,  a):
 	# There are no hints for this question.
 
 def nine(string1, string2):
-    return False
+	if len(string1) > len(string2):
+		for i in range(len(string2)):
+			if string1.count(string2[i]) < string2.count(string2[i]):
+				return False
+		return True
+	else:
+		for i in range(len(string1)):
+			if string2.count(string1[i]) < string1.count(string1[i]):
+				return False
+		return True
+	return False
 
 	# <QUESTION 10>
 
@@ -254,4 +263,10 @@ def nine(string1, string2):
 	# Think about nesting for loops.
 
 def ten(X,Y):
-	return []
+	output = list()
+	for i in range(Y):
+		temp_list = []
+		for j in range(X):
+			temp_list.append(i*j)
+		output.append(temp_list)
+	return output
